@@ -80,7 +80,7 @@ def self.find_by_name
   SQL
   dog = DB[:conn].execute(sql, name).first
 
-
+end 
 
 
 
