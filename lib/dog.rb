@@ -25,7 +25,9 @@ class Dog
     DB[:conn].execute(sql)
   end 
   def save 
-    sql =
+    sql = <<-SQL
+    SELECT * FROM (name, breed)
+    SQL
   
   
 end 
