@@ -35,10 +35,11 @@ class Dog
   
   def self.create(new_atributes) 
      dog = self.new(new_atributes)
-      dog.save
-
-      dog
-    
-  end 
+     dog.save
+     dog
+   end 
+  
+  
+def self.new_from_db(atributes)
   
 end 
