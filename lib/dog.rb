@@ -48,6 +48,14 @@ def self.new_from_db(row)
     }
     self.new(attributes_hash)
   end
+  
+  
+  def self.find_by_id
+    sql = <<-SQL
+    SELECT * FROM dogs WHERE id = ?
+    SQL
+    DB[:conn].execute(sql, self.name, self.breed)
+  end 
 
 
 
