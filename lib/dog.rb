@@ -84,8 +84,9 @@ def self.find_by_name(name)
   
   def update 
     sql = <<-SQL
-    UPDATE * FROM dogs WHERE name = ? 
+    UPDATE dogs SET name = ?, breed = ? WHERE id = ?
     SQL
+    DB[:conn].connect(sql, self.name, self.breed)
   end 
 
 end 
