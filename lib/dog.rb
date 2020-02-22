@@ -79,7 +79,7 @@ def self.find_by_name(name)
   SELECT * FROM dogs WHERE name = ?
   SQL
   dog = DB[:conn].execute(sql, name).map do |row|
-    self.new_from_db(rou)
+    self.new_from_db(row)
   end.first
 
 end 
