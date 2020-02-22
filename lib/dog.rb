@@ -74,7 +74,11 @@ def self.new_from_db(row)
   end 
 
 
-
+def self.find_by_name
+  sql = <<-SQL
+  SELECT * FROM dogs WHERE name = ?
+  SQL
+  dog = DB[:conn].execute(sql, name).first
 
 
 
