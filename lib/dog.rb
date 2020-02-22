@@ -54,7 +54,7 @@ def self.new_from_db(row)
     sql = <<-SQL
     SELECT * FROM dogs WHERE id = ?
     SQL
-    DB[:conn].execute(sql, self.name, self.breed)
+    DB[:conn].execute(sql)
   end 
 
 
