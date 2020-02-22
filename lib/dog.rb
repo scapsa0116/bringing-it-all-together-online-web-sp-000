@@ -82,13 +82,13 @@ def self.find_by_name(name)
     self.new_from_db(row)
   end.first
   
-  def update 
+  def update
     sql = <<-SQL
-    UPDATE dogs SET name = ?, breed = ? WHERE id = ?
-    SQL
-    DB[:conn].connect(sql, self.name, self.breed, self.id)
-  end 
+      UPDATE dogs SET name = ?, breed = ? WHERE id = ?
+      SQL
 
+      DB[:conn].execute(sql, self.name, self.breed, self.id)
+  end
 end 
 
 
