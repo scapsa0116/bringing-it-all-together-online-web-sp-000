@@ -83,6 +83,9 @@ def self.find_by_name(name)
   end.first
   
   def update 
+    sql = <<-SQL
+    UPDATE * FROM dogs WHERE name = ? 
+    SQL
   end 
 
 end 
